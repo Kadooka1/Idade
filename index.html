@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo else if</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #e9ecef; }
+        .box { background: white; padding: 20px; border-radius: 8px; display: inline-block; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>📊 Classificador de Desempenho</h2>
+        <input type="number" id="nota" placeholder="Digite a nota (0-10)">
+        <button onclick="analisar()">Analisar</button>
+        <p id="feedback"></p>
+    </div>
+
+    <script>
+        function analisar() {
+            let nota = Number(document.getElementById("nota").value);
+            let result = document.getElementById("feedback");
+
+            if (nota >= 9) {
+                result.innerHTML = "🌟 Desempenho: Excelente!";
+                result.style.color = "blue";
+            }
+            else if (nota >= 7) {
+                result.innerHTML = "✅ Desempenho: Bom!";
+                result.style.color = "green";
+            }
+            else if (nota >= 5) {
+                result.innerHTML = "⚠️ Desempenho: Regular (Recuperação).";
+                result.style.color = "orange";
+            }
+            else {
+                result.innerHTML = "❌ Desempenho: Insuficiente.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
